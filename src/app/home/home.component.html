@@ -8,10 +8,10 @@
   <div class="collapse navbar-collapse " id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link text"routerLink="">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link text" routerLink="">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text"routerLink="/edit">Edit</a>
+        <a class="nav-link text" routerLink="/edit">Edit</a>
       </li>
 
     </ul>
@@ -35,7 +35,15 @@
       <div class="form-group">
         <label for="exampleFormControlSelect1"><strong>Sectors</strong></label>
         <select class="form-control" id="exampleFormControlSelect1" (change)="category($event)">
-          <option *ngFor="let data of categories" value={{data.id}}>{{data.name}}</option>
+          <option *ngFor="let data of categories" value={{data.id}}>
+            <ng-container *ngIf="data.cat_level == 0">{{data.name}}</ng-container>
+            <ng-container *ngIf="data.cat_level == 1">{{'&nbsp;&nbsp;&nbsp;&nbsp;'+data.name}}</ng-container>
+            <ng-container *ngIf="data.cat_level == 2">{{'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+data.name}}
+            </ng-container>
+            <ng-container *ngIf="data.cat_level == 3">
+              {{' '+data.name}}
+            </ng-container>
+          </option>
         </select>
       </div>
 
@@ -49,7 +57,8 @@
       <div class="row">
         <button type="button" class="btn btn-success" style="margin-left:1.5%;margin-top: 2%;"
           (click)="addEmployee(name.value)">Save</button>
-          <button type="button" class="btn btn-primary" style="margin-left:1.5%;margin-top: 2%;">Edit</button>
+        <button type="button" routerLink="./edit" class="btn btn-primary"
+          style="margin-left:1.5%;margin-top: 2%;">Edit</button>
       </div>
     </div>
   </div>

@@ -62,4 +62,8 @@ export class EditComponent implements OnInit {
     await this.edit_service.updateEmployee(obj, this.selected_employee?.id);
     this.router.navigateByUrl('/edit');
   }
+
+  isSelected(id: any): boolean {
+    return id == this.selected_employee.category;
+  }
 }
