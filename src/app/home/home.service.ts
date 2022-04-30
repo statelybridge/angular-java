@@ -17,7 +17,6 @@ export class HomeService {
           if (data == null) {
             console.log(data);
           }
-          console.log(data);
           await this.formatCategories(data);
           resolve(data);
         })
@@ -52,7 +51,6 @@ export class HomeService {
         // if (!arr.includes(obj?.id)) {
         // }
       });
-      console.log(arr);
     } catch (error) {
       throw new Error('Error while formating Categories: ' + error);
     }
@@ -67,7 +65,6 @@ export class HomeService {
           if (data == null) {
             console.log(data);
           }
-          console.log(data);
           // await this.formatCategories(data);
           resolve(data);
         })

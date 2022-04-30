@@ -25,7 +25,6 @@ export class HomeComponent implements OnInit {
 
   addEmployee(name: any) {
     try {
-      console.log('name ', name.length);
       if (!name || name.length == 0) {
         this.openSnackBar('You must have to enter name');
         return;

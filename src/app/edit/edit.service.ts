@@ -15,13 +15,10 @@ export class EditService {
         .toPromise()
         .then(async (data: any) => {
           if (data == null) {
-            console.log(data);
           }
-          console.log(data);
           resolve(data);
         })
         .catch((err) => {
-          console.log(err);
           reject(err);
         });
     });
@@ -34,9 +31,7 @@ export class EditService {
         .toPromise()
         .then(async (data: any) => {
           if (data == null) {
-            console.log(data);
           }
-          console.log(data);
           resolve(data);
         })
         .catch((err) => {

@@ -49,7 +49,6 @@ export class EditComponent implements OnInit {
   }
 
   employee(event: any) {
-    console.log(this.getName(event.target.value));
     this.selected_employee = this.getName(event.target.value);
   }
 
